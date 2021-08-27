@@ -1,0 +1,45 @@
+
+########### ANGULAR #################
+
+====> CREAR NUEVO PROYECTO: 
+	>$: ng new [nombre_del_proyecto]
+	>$: No
+	>$: CSS
+
+====> EJECUTAR LA APLICACION: ubicarse en la raiz
+	>$: ng serve -o
+
+
+====> CREAR NUEVO COMPONENTE: ubicarse en la raiz
+	>$: cd src
+	>$: cd app
+	>$: mkdir footer
+	>$: cd footer
+	>$: ng generate class footer.component
+
+	NOTA: al crear la clase Footer.Component botara error, entonsces elminar el punto para que quede FooterComponent
+
+====> CREAR UNA DIRECTIVA ESTRUCTURAL(html, ts, css, spec): ubicarse en la raiz
+	>$: ng g c directiva
+
+
+====> CREAR UNA CLASE CLIENTE(ts, spec)
+	creamos la directiva clientes
+	>$: ng g c clientes
+	nos ubicamos en la directiva creada
+	>$: cd src
+	>$: cd app
+	>$: cd clientes
+	>$: ng g class cliente
+
+====> CREAR UNA CLASE DE SERVIVIO CLIENTESERVICE(ts, spec)
+	>$: cd src
+	>$: cd app
+	>$: cd clientes
+	>$: ng g service cliente
+
+====> INSTALANDO BOOSTRAP DESDE LA LINEA DE COMANDO(css, js)
+	>$: npm install bootstrap@next --save
+
+====> INSTALANDO POPPER DESDE LA LINEA DE COMANDO(js)
+	>$: npm install popper.js --save
