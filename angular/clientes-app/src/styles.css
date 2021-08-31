@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  margin-bottom: 60px;
+}
+
+.wrap{
+  padding-bottom: 60px;
+}
+
+/* Agregamos margen para los botones en SweetAlert */
+.btn-danger{
+  margin: 5px 5px 5px 5px;
+}
+
+/* Agregamos margen para los botones en SweetAlert */
+.btn-success{
+  margin: 5px 5px 5px 5px;
+}

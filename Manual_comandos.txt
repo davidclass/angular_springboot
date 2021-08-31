@@ -38,8 +38,13 @@
 	>$: cd clientes
 	>$: ng g service cliente
 
-====> INSTALANDO BOOSTRAP DESDE LA LINEA DE COMANDO(css, js)
-	>$: npm install bootstrap@next --save
+====> INSTALANDO BOOSTRAP, JQUERY, POPPER DESDE LA LINEA DE COMANDO(css, js)
+	>$: npm install bootstrap@4.0.0-beta.2 jquery popper.js -save
 
 ====> INSTALANDO POPPER DESDE LA LINEA DE COMANDO(js)
 	>$: npm install popper.js --save
+
+====> CREAR NUEVO COMPONENTE FORM: ubicarse en la raiz(html, spec, ts, css)
+	>$: ng g c clientes/form --flat
+
+	NOTA: El --flat es para no generar la carpeta cuando creamos componentes
