@@ -44,6 +44,7 @@ public class Cliente implements Serializable {
     //De forma automatica se va generar la fecha antes de persistir la clase cliente en la BD
     @PrePersist
     public void prePersis(){
+
         createAt = new Date();
     }
 
