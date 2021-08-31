@@ -3,10 +3,14 @@ package com.springboot.backend.apirest.controlles;
 import com.springboot.backend.apirest.model.entity.Cliente;
 import com.springboot.backend.apirest.model.service.IClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 //@CrossOrigin(origins = {"http://192.168.0.4:4200"}) // Indico que angular(4200) con el host "192.168.0.100" se puede conectar a api rest ClienteController
 //@CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -28,9 +32,26 @@ public class ClienteRestController {
 
     // Busca un cliente por su ID
     @GetMapping("/clientes/{id}")
-    public Cliente show(@PathVariable Long id){
+    public ResponseEntity<?> show(@PathVariable Long id){
 
-        return clienteService.findById(id);
+        Cliente cliente = null;
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            cliente = clienteService.findById(id);
+        }catch (DataAccessException e){
+            response.put("mensaje", "Error al realizar la consulta en la base de datos.");
+            response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()) );
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+        }
+
+
+        if (cliente == null){
+            response.put("mensaje", "El cliente ID: ".concat(id.toString().concat(" no esiste en la base datos!")));
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
     }
 
     //Cramos un cliente
