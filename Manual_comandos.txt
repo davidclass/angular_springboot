@@ -39,7 +39,7 @@
 	>$: ng g service cliente
 
 ====> INSTALANDO BOOSTRAP, JQUERY, POPPER DESDE LA LINEA DE COMANDO(css, js)
-	>$: npm install bootstrap@4.0.0-beta.2 jquery popper.js -save
+	>$: npm install bootstrap@4.6.0 jquery@3.5.1 popper.js --save
 
 ====> INSTALANDO POPPER DESDE LA LINEA DE COMANDO(js)
 	>$: npm install popper.js --save
@@ -48,3 +48,9 @@
 	>$: ng g c clientes/form --flat
 
 	NOTA: El --flat es para no generar la carpeta cuando creamos componentes
+
+====> INSTALANDO SWEETALERT2
+	>$: npm install sweetalert2 --save
+
+
+	

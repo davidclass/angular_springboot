@@ -1,6 +1,9 @@
 package com.springboot.backend.apirest.model.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -28,12 +31,17 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Si no ingresamos el ID em el fichero import.sql usar IDENTITY
     private Long id;
 
+    @NotEmpty
+    @Size(min=4, max=12)
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
+    @NotEmpty
     @Column(name = "apellido")
     private String apellido;
 
+    @NotEmpty
+    @Email
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
